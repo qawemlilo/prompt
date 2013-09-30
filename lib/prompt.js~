@@ -1,0 +1,109 @@
+
+"use strict";
+
+var questions = [];
+var answers = Object.create({});
+var stdin = process.stdin; 
+var stdout = process.stdout;
+
+function prompt(question, fn) {
+    "use strict";
+
+    stdin.resume();
+    stdout.write(question + ": ");
+
+    stdin.once('data', function(answer) {
+        answer = answer.toString().trim();
+        fn(answer);
+    });
+}
+
+Prompt.prototype.init = function () {
+    if (!this.questions.length) {
+        return false;
+    }
+    
+    var stdin = process.stdin, stdout = process.stdout, question, self = this;
+    
+    question = self.getNext();
+    
+    self.prompt(question, function (answer) {
+        if (question.required && !question.validate.call(undefined, answer)) {
+            
+        }    
+    });
+    
+    return next;
+};
+
+
+Prompt.prototype.prompt = function (question, next) {
+    var stdin = process.stdin, stdout = process.stdout;
+    
+    stdin.resume();
+    stdout.write(question + ": ");
+
+    stdin.once('data', function(answer) {
+        answer = answer.toString().trim();
+        next(answer);
+    });
+};
+
+
+Prompt.prototype.handleAnswer = function (question, next) {
+    if (question.required && !question.validate.call(undefined, answer)) {
+       return 
+    }
+    
+    stdin.resume();
+    stdout.write(question + ": ");
+
+    stdin.once('data', function(answer) {
+        answer = answer.toString().trim();
+        next(answer);
+    });
+};
+
+Prompt.prototype.getNext = function () {
+    if (!this.questions.length) {
+        return false;
+    }
+    
+    var next = this.questions.shift();
+    
+    return next;
+};
+
+Prompt.prototype.validateQuestion = function (question, fn) {
+    
+    var isValid = fn.call(undefined, question);
+    
+    return isValid;
+};
+
+
+
+module.exports = function (questions) {
+    "use strict";
+    
+    var stdin = process.stdin, stdout = process.stdout, question;
+    
+    
+    if (!questions.length) {
+        stdin.end();
+        return;
+    }
+    
+    question = questions.shift();
+
+    stdin.resume();
+    stdout.write(question + ": ");
+
+    stdin.once('data', function(data) {
+        data = data.toString().trim();
+        answers[question] = data;
+        prompt();
+    });
+};
+
+
