@@ -1,0 +1,21 @@
+{
+  "name": "prompt",
+  "version": "0.0.1",
+  "description": "Simple CLI prompt for Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/qawemlilo/prompt.git"
+  },
+  "keywords": [
+    "prompt"
+  ],
+  "author": "Qawelesizwe Mlilo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qawemlilo/prompt/issues"
+  }
+}
