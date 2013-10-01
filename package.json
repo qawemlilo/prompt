@@ -13,9 +13,15 @@
   "keywords": [
     "prompt"
   ],
-  "author": "Qawelesizwe Mlilo",
+  "author": {
+    "name": "Qawelesizwe Mlilo",
+    "email": "qawemlilo@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/qawemlilo/prompt/issues"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
   }
 }
