@@ -32,7 +32,7 @@ var questions = [
         required: true,
         
         validate: function (answer) {
-            return parseInt(answer) >= 18;
+            return parseInt(answer, 10) >= 18;
         }
     }
 ];
