@@ -1,6 +1,6 @@
 {
-  "name": "prompt",
-  "version": "0.0.1",
+  "name": "simple-prompt",
+  "version": "0.0.2",
   "description": "Simple CLI prompt for Node",
   "main": "index.js",
   "scripts": {
