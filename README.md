@@ -45,7 +45,7 @@ prompt(questions, function (answers) {
 });
 ````
 
-### Questin object
+### Question object
 The `question object` has 4 properties that you can specify:
 
  - question (String)- label for your question and key for your answer.
