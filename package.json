@@ -1,10 +1,13 @@
 {
   "name": "simple-prompt",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Simple CLI prompt for Node",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodeunit test"
+  },
+  "bin": { 
+    "nodeunit": "node_modules/nodeunit/bin/nodeunit" 
   },
   "repository": {
     "type": "git",
@@ -23,5 +26,8 @@
   },
   "engines": {
     "node": ">= 0.8.0"
+  },
+  "devDependencies": {
+    "nodeunit": "~0.8.1"
   }
 }
