@@ -35,6 +35,9 @@ exports['parse a question object'] = function (test) {
     var cleanQuestion = prompt.parseQuestion(questions[2]);
     
     test.equal(cleanQuestion.question, 'Age');
+    test.equal(cleanQuestion.required, true);
+    test.equal(cleanQuestion.filter.call(undefined, '12'), 12);
+    test.equal(cleanQuestion.validate.call(undefined, '12'), false);
     
     test.done();
 };
