@@ -1,13 +1,10 @@
 {
   "name": "simple-prompt",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Simple CLI prompt for Node",
   "main": "index.js",
   "scripts": {
-    "test": "nodeunit test"
-  },
-  "bin": { 
-    "nodeunit": "node_modules/nodeunit/bin/nodeunit" 
+    "test": "node node_modules/nodeunit/bin/nodeunit test"
   },
   "repository": {
     "type": "git",
