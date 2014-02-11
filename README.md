@@ -21,6 +21,8 @@ var questions = [
         question: 'Name',
         
         required: true // required
+        
+        default: 'John' // default value
     },
     {
         question: 'Surname' //optional
@@ -36,7 +38,9 @@ var questions = [
         
         filter: function (answer) {
             return parseInt(answer, 10); // bring back my answer as a number
-        }
+        },
+        
+        default: 18 // default value
     }
 ];
 
@@ -49,6 +53,7 @@ prompt(questions, function (answers) {
 The `question object` has 4 properties that you can specify:
 
  - question (String)- label for your question and key for your answer.
+ - default (String)- default value if answer is not given.
  - required (Boolean) - flag to indicated if input is required.
  - validate (Function) - a function that accepts a string and returns a boolean value after testing it.
  - filter (Function) - a function that accepts a string and returns it after doing operations on it.

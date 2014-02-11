@@ -26,7 +26,12 @@ questions = [
         filter: function (answer) {
             return parseInt(answer, 10); // bring back my answer as a number
         }
-    }
+    },
+    {
+        question: 'Gender',
+        
+        default: 'Male'
+    }        
 ];
 
 
@@ -49,6 +54,7 @@ exports['read user input'] = function (test) {
         test.equal(answers.Name, 'John');
         test.equal(answers.Surname, 'Doe');
         test.equal(answers.Age, 27);
+        test.equal(answers.Gender, 'Male');
         
         console.log('\n' + answers.Name + ' ' + answers.Surname + ' ' + answers.Age + '\n');
         
@@ -63,4 +69,7 @@ exports['read user input'] = function (test) {
     
     console.log('');
     process.stdin.emit('data', '27');
+    
+    console.log('');
+    process.stdin.emit('data', false);
 };
