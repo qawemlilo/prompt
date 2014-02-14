@@ -1,17 +1,21 @@
 {
   "name": "simple-prompt",
-  "version": "0.1.3",
+  "version": "0.1.4",
+  "homepage": "http://qawemlilo.github.io/prompt",
   "description": "Simple CLI prompt for Node",
   "main": "index.js",
   "scripts": {
-    "test": "node node_modules/nodeunit/bin/nodeunit test"
+    "test": "npm run jshint && node ./node_modules/nodeunit/bin/nodeunit test",
+    "jshint": "node ./node_modules/jshint/bin/jshint lib/prompt.js ./test/prompt_test.js"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/qawemlilo/prompt.git"
   },
   "keywords": [
-    "prompt"
+    "prompt",
+    "terminal input",
+    "cli"
   ],
   "author": {
     "name": "Qawelesizwe Mlilo",
@@ -25,6 +29,12 @@
     "node": ">= 0.8.0"
   },
   "devDependencies": {
-    "nodeunit": "~0.8.1"
-  }
+    "nodeunit": "~0.8.1",
+    "jshint": "~2.4.3"
+  },
+  "files": [
+    "example",
+    "lib",
+    "test"
+  ]
 }

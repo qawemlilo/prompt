@@ -1,5 +1,5 @@
 /*
- * Prompt
+ * Simple Prompt
  * https://github.com/qawemlilo/prompt
  *
  * Copyright (c) 2013 Qawelesizwe

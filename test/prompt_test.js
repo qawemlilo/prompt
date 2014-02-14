@@ -1,6 +1,4 @@
 
-"use strict";
-
 var prompt = require('../lib/prompt'), 
     questions;
 
@@ -37,6 +35,8 @@ questions = [
 
 
 exports['parse a question object'] = function (test) {
+    "use strict";
+    
     var cleanQuestion = prompt.parseQuestion(questions[2]);
     
     test.equal(cleanQuestion.question, 'Age');
@@ -49,6 +49,7 @@ exports['parse a question object'] = function (test) {
 
 
 exports['read user input'] = function (test) {
+    "use strict";
 
     prompt(questions, function (answers) {
         test.equal(answers.Name, 'John');
