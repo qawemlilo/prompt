@@ -1,7 +1,7 @@
 # Simple Prompt
 > Simple commandline prompt for Node.js
 
-While working on a Node.js automation tool I needed to generate some files and code after gathering a few details from the user. Most of the modules that I found were a bit of an over-kill, all I wanted was a good old prompt (the browser type) so I decided to write this module. 
+While working on a Node.js automation tool I needed to generate some files and code after gathering a few details from the user. Most of the modules that I found were a bit of an over-kill, all I wanted was a good old prompt (the browser type) so I wrote this module. 
 
 ### Installation
 
@@ -20,7 +20,7 @@ var questions = [
     {
         question: 'Name',
         
-        required: true // required
+        required: true, // required
         
         default: 'John' // default value
     },
