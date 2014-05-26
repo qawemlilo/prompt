@@ -1,6 +1,6 @@
 {
   "name": "simple-prompt",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "homepage": "http://qawemlilo.github.io/prompt",
   "description": "Simple CLI prompt for Node",
   "main": "./index.js",
@@ -35,6 +35,7 @@
   "files": [
     "example",
     "lib",
-    "test"
+    "test",
+    "index.js"
   ]
 }
