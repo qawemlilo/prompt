@@ -27,10 +27,10 @@
     "url": "https://github.com/qawemlilo/prompt/issues"
   },
   "engines": {
-    "node": ">= 0.8.0"
+    "node": ">= 0.10.0"
   },
   "devDependencies": {
-    "nodeunit": "~0.8.1",
-    "jshint": "~2.4.3"
+    "nodeunit": "~0.9.0",
+    "jshint": "~2.5.1"
   }
 }
