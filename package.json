@@ -1,6 +1,6 @@
 {
   "name": "simple-prompt",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "homepage": "http://qawemlilo.github.io/prompt",
   "description": "Simple CLI prompt for Node",
   "main": "./index.js",
@@ -15,6 +15,7 @@
   "keywords": [
     "prompt",
     "terminal input",
+    "commandline",
     "cli"
   ],
   "author": {
@@ -31,11 +32,5 @@
   "devDependencies": {
     "nodeunit": "~0.8.1",
     "jshint": "~2.4.3"
-  },
-  "files": [
-    "example",
-    "lib",
-    "test",
-    "index.js"
-  ]
+  }
 }

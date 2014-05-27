@@ -1,35 +1,41 @@
 
-var prompt = require('../lib/prompt'), 
-    questions;
 
+var Prompt = require('../lib/prompt'); 
 
-questions = [
+var questions = [
     {
-        question: 'Name',
-        
+        question: 'Name',  
         required: true // required
     },
     {
         question: 'Surname' //optional
     },
     {
-        question: 'Age',
-        
+        question: 'Age', 
         required: true, // required
-        
         validate: function (answer) {
             return parseInt(answer, 10) >= 18; // only 18 or higher
         },
-        
         filter: function (answer) {
             return parseInt(answer, 10); // bring back my answer as a number
         }
     },
     {
         question: 'Gender',
-        
         default: 'Male'
     }        
+];
+
+var moreQuestions = [
+    {
+        question: 'Favourite Text Editor',
+    },
+    {
+        question: 'Favourite OS',
+    },
+    {
+        question: 'Favourite Beverage',
+    }     
 ];
 
 
@@ -37,7 +43,7 @@ questions = [
 exports['parse a question object'] = function (test) {
     "use strict";
     
-    var cleanQuestion = prompt.parseQuestion(questions[2]);
+    var cleanQuestion = Prompt.parseQuestion(questions[2]);
     
     test.equal(cleanQuestion.question, 'Age');
     test.equal(cleanQuestion.required, true);
@@ -51,7 +57,10 @@ exports['parse a question object'] = function (test) {
 exports['read user input'] = function (test) {
     "use strict";
 
-    prompt(questions, function (answers) {
+    var profile = new Prompt(questions);
+
+    profile.create().then(function (error, answers) {
+        test.equal(error, false);
         test.equal(answers.Name, 'John');
         test.equal(answers.Surname, 'Doe');
         test.equal(answers.Age, 27);
@@ -73,4 +82,30 @@ exports['read user input'] = function (test) {
     
     console.log('');
     process.stdin.emit('data', false);
+};
+
+
+
+exports['create another instance of Prompt'] = function (test) {
+    "use strict";
+
+    var favourites = new Prompt(moreQuestions);
+
+    favourites.create().then(function (error, answers) {
+        test.equal(error, false);
+        test.equal(answers.FavouriteTextEditor, 'Sublime');
+        test.equal(answers.FavouriteOS, 'Ubuntu');
+        test.equal(answers.FavouriteBeverage, 'Beer');
+                
+        test.done();
+    });
+    
+    console.log('');
+    process.stdin.emit('data', 'Sublime');
+    
+    console.log('');
+    process.stdin.emit('data', 'Ubuntu');
+
+    console.log('');
+    process.stdin.emit('data', 'Beer');
 };
