@@ -19,7 +19,7 @@ npm install simple-prompt
 
 Simple prompt accepts an array of `question objects`
 
-````
+```javascript
 var Prompt = require('simple-prompt');
 
 var questions = [
